@@ -1,0 +1,38 @@
+.container{
+    margin-top: 200px;
+}
+.card{
+    margin: 15px;
+    padding: 0;
+    width: 20rem;
+    background: black;
+    transition: 0.6s ease;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+
+.card-title{
+    font-size: 1.5em;
+    font-weight: 100;
+    letter-spacing: 1px;
+    text-transform:capitalize;
+}
+
+.card-text{
+    color: whitesmoke;
+    font-size: 0.8em;
+    font-weight: 100;
+    letter-spacing: 1px;
+    text-transform:capitalize;
+}
+
+.btn{
+    width: 100%;
+    text-transform: lowercase;
+}
+.btn:hover{
+    color: #ED474A;
+    background-color: whitesmoke;
+    border: 0;
+}
