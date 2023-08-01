@@ -1,0 +1,23 @@
+<div class="container Montserrat">
+     <div class="row justify-content-center">
+            <div class="card col-md-4 rounded-5 " *ngFor=" let series of allTvShows">
+                
+
+                
+                <img class="card-img-top rounded-top-5 " [src]="basepath + series.poster_path" alt="Card image cap">
+
+                <div class="card-body">
+                    <h5 class="card-title text-danger ">{{series.name}}</h5>
+                    <p class="card-text">{{series.overview}}</p>
+                    <span class="movie_info">{{ series.first_air_date | date}}</span>
+  
+                </div>
+               
+                <button type="button" class="btn btn-outline-danger rounded-5"><i class="fa-solid fa-cart-shopping"></i> Add to cart </button>
+                <button   type="button" class="btn btn-outline-danger rounded-5 " [routerLink]="['/series-details',series.id]">Watch Now</button>
+
+            </div>
+
+        </div>
+</div>
+

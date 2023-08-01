@@ -1,0 +1,19 @@
+  
+   <div class="container p-5">
+        <div class="row  bg-black d-flex justify-content-around">
+            <div class="col-sm-4 p-5">
+                <h2>{{selectedmovie?.title}}</h2>
+                <p><span><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star-half-stroke"></i> {{selectedmovie?.vote_average}} (Imdb)</span></p>
+                <p>{{selectedmovie?. overview}}</p>
+                <p> <span>Time Release:</span> {{ selectedmovie?.release_date | date}}</p>
+                <button class="btn btn-outline-light ">Watch Now</button>
+             </div>
+             <div class="col-sm-4 p-5">
+                <img src="{{basepath+selectedmovie?.poster_path}}" alt="" class="float-end rounded-5 img-thumbnail">
+             </div>
+             
+         </div>
+    </div>
+   
+
+
