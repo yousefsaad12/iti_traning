@@ -1,35 +1,22 @@
-<div class="container">
-    <div class="row justify-content-center">
-            <div class="card col-lg-4 rounded-5">
-            <img class="card-img-top rounded-5" src="https://mzd.bio/wp-content/uploads/2023/07/0-11933-1326556.jpg" alt="Card image cap">
+<div class="container Montserrat">
+    
+     <div class="row justify-content-center">
+            <div class="card col-md-4 rounded-5 " *ngFor=" let movie of allMovies">
+    
+                <img class="card-img-top rounded-top-5" style="height: 18rem; background-size: cover;" [src]="basepath + movie.poster_path" alt="Card image cap">
 
                 <div class="card-body">
-                    <h5 class="card-title text-danger">Flash</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <button type="button" class="btn btn-outline-danger rounded-5">Watch Now</button>
-                </div>
-                
-            </div>
-
-            <div class="card col-lg-4 rounded-5">
-                <img class="card-img-top rounded-5" src="https://mzd.bio/wp-content/uploads/2023/07/0-11933-1326556.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title text-danger">Flash</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <button type="button" class="btn btn-outline-danger rounded-5">Watch Now</button>
+                    <h5 class="card-title text-danger ">{{movie.title}}</h5>
+                    <p class="card-text">{{movie.overview}}</p>
+                    <span class="movie_info">{{ movie.release_date | date}}</span>
+                 
                 </div>
                
+                <button type="button" class="btn btn-outline-danger rounded-5"><i class="fa-solid fa-cart-shopping"></i> Add to cart </button>
+                <button   type="button" class="btn btn-outline-danger rounded-5"  [routerLink]="['/movie_details',movie.id]">Watch Now</button>
+
             </div>
 
-            <div class="card col-lg-4 rounded-5">
-                <img class="card-img-top rounded-5" src="https://mzd.bio/wp-content/uploads/2023/07/0-11933-1326556.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title text-danger">Flash</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <button type="button" class="btn btn-outline-danger rounded-5">Watch Now</button>
-                </div>
-                
-            </div>
         </div>
-    </div>
+</div>
 
