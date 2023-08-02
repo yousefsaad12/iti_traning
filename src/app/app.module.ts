@@ -14,6 +14,7 @@ import { SeriesCardComponent } from './series-card/series-card.component';
 import { SeriesPageComponent } from './series-page/series-page.component';
 import { MovieDetialsComponent } from './movie-detials/movie-detials.component';
 import { SeriesDetailsComponent } from './series-details/series-details.component';
+import { StarRatingComponent } from './star-rating/star-rating.component';
 
 
 
@@ -31,6 +32,7 @@ import { SeriesDetailsComponent } from './series-details/series-details.componen
     SeriesPageComponent,
     MovieDetialsComponent,
     SeriesDetailsComponent,
+    StarRatingComponent,
    
   ],
   imports: [
