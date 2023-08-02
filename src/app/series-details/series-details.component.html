@@ -3,11 +3,9 @@
     <div class="row  bg-black d-flex justify-content-around">
         <div class="col-sm-4 p-5  position-relative">
             <h2>{{selectedTvShow?.name}}</h2>
-            <p><span><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star-half-stroke"></i> {{selectedTvShow?.vote_average}} (Imdb)</span></p>
-            <p>{{selectedTvShow?. overview}}</p>
-            <p> <span>Time Release:</span> {{ selectedTvShow?.first_air_date | date}}</p>
-
-            
+             <app-star-rating [rating]=" selectedTvShow?.vote_average"></app-star-rating>
+             <p>{{selectedTvShow?. overview}}</p>
+             <p> {{ selectedTvShow?.first_air_date | date}}</p>
             <button class="btn rounded-5 btn-outline-light bottom-0">Watch Now</button>
 
          </div>
