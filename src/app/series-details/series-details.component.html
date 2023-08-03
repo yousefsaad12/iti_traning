@@ -5,6 +5,16 @@
             <h2>{{selectedTvShow?.name}}</h2>
              <app-star-rating [rating]=" selectedTvShow?.vote_average"></app-star-rating>
              <p>{{selectedTvShow?. overview}}</p>
+             <div class="row mb-2">
+                <p><span>Catgory:</span></p>
+                <p
+                  class="col-sm-12 col-md-6 col-lg-6 badge bg-danger ourdisplay m-2 rounded-5"
+                  style="width:150px;"
+                  *ngFor="let genre of TvGenres"
+                >
+                  {{ genre.name }}
+                </p>
+              </div>
              <p> {{ selectedTvShow?.first_air_date | date}}</p>
             <button class="btn rounded-5 btn-outline-light bottom-0">Watch Now</button>
 

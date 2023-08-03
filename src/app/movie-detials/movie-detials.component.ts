@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieServiceService } from '../movie-service.service';
 
@@ -11,14 +11,24 @@ import { MovieServiceService } from '../movie-service.service';
 export class MovieDetialsComponent {
   basepath = 'https://image.tmdb.org/t/p/w780';
 
-  selectedmovie!:any
+  selectedmovie!:any;
   selectedMovieId:any='';
+  moviesGenres:any[]=[];
   
-  constructor(public myRouts:ActivatedRoute, myMoiveSer:MovieServiceService) {
-    
+  
+  constructor(public myRouts: ActivatedRoute,public myMoviesSer:MovieServiceService) {
+  }
+  ngOnInit(): void {
     this.selectedMovieId = this.myRouts.snapshot.paramMap.get('id');
-    this.selectedmovie = myMoiveSer.getMovieById(this.selectedMovieId)
+    this.myMoviesSer.getMovieById(this.selectedMovieId).subscribe({
+      next:(data) =>
+      {
+        this.selectedmovie = data;
+        this.moviesGenres = data.genres;
+      } 
+    }
+      
+    )
    
   }
-
 }

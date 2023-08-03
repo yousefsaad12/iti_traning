@@ -2,9 +2,10 @@
     margin-top: 50px;
 }
 .card{
-    margin: 15px;
+    
     padding: 0;
-    width: 20rem;
+    margin: 15px;
+    width: 18rem;
     background: black;
     transition: 0.6s ease;
 }
@@ -13,7 +14,7 @@
 }
 
 .card-title{
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: 100;
     letter-spacing: 1px;
     text-transform:capitalize;

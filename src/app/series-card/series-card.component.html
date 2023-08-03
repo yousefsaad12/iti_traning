@@ -1,6 +1,6 @@
 <div class="container Montserrat">
      <div class="row justify-content-center">
-            <div class="card col-md-4 rounded-5 " *ngFor=" let series of allTvShows">
+            <div class="card col-md-4 col-sm-12 rounded-5 " *ngFor=" let series of allTvShows">
                 
 
                 
@@ -21,3 +21,8 @@
         </div>
 </div>
 
+<mat-paginator [length]="totalPages"
+              [pageSize]="20"
+              aria-label="Select page"
+              (page)="changePage($event)">
+</mat-paginator>

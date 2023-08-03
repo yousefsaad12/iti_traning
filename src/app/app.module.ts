@@ -15,7 +15,9 @@ import { SeriesPageComponent } from './series-page/series-page.component';
 import { MovieDetialsComponent } from './movie-detials/movie-detials.component';
 import { SeriesDetailsComponent } from './series-details/series-details.component';
 import { StarRatingComponent } from './star-rating/star-rating.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 
 @NgModule({
@@ -39,6 +41,9 @@ import { StarRatingComponent } from './star-rating/star-rating.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule
 
   ],
   providers: [],
