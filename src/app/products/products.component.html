@@ -1,0 +1,23 @@
+<div class="container Montserrat">
+    
+    <div class="row justify-content-center">
+           <div class="card col-md-4 rounded-5 " *ngFor=" let product of allProducts">
+   
+               <img class="card-img-top rounded-top-5" style="height: 18rem; background-size: cover;" [src]="product.image" alt="Card image cap">
+
+               <div class="card-body">
+                   <h5 class="card-title text-danger ">{{product.title}}</h5>
+                   <p class="card-text">{{product.description}}</p>
+                   <span class="movie_info">{{ product.price | currency}}</span>
+                
+               </div>
+              
+               <button type="button" class="btn btn-outline-danger rounded-5"><i class="fa-solid fa-cart-shopping"></i> Add to cart </button>
+               <button   type="button" class="btn btn-outline-danger rounded-5"  [routerLink]="['/movie_details',product.id]">Watch Now</button>
+
+           </div>
+
+       </div>
+</div>
+
+

@@ -20,8 +20,9 @@
         </div>
 </div>
 
-<mat-paginator [length]="totalPages"
-              [pageSize]="20"
+<mat-paginator [length]="totalItems"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="listofPageSize"
               aria-label="Select page"
               (page)="changePage($event)">
 </mat-paginator>

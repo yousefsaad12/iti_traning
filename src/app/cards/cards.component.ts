@@ -11,39 +11,32 @@ import { PageEvent } from '@angular/material/paginator';
 export class CardsComponent {
   basepath = 'https://image.tmdb.org/t/p/w780';
   currentPage:number = 1;
-  totalPages:number = 0;
+  listofPageSize = [5, 10, 25, 100];
+  pageSize:number = 5;
   allmovies:Imovie[] = [];
+  totalItems:number = 0;
 
   constructor(public myMovie: MovieServiceService){}
 
-  ngOnInit() : void
+  ngOnInit():void
   {
-    this.myMovie.getAllMovies(this.currentPage).subscribe({
-      next:(apidata) => 
-      {
-        this.allmovies = apidata.results;
-        this.totalPages = apidata.total_results;
-      }
-
-     });
+    this.myMovie.getAllMovies(this.currentPage,this.pageSize).subscribe({next:(moviesData)=>{
+       console.log(moviesData);
+      this.allmovies = moviesData;
+       
+    }})
   }
 
-  handelChildMsg(childMsg:string){
-    console.log(childMsg);
-    
-  }
 
-  changePage(pageData: PageEvent)
-  {
-    this.currentPage = pageData.pageIndex + 1;
-    this.myMovie.getAllMovies(this.currentPage).subscribe({
-      next:(apidata) => 
-      {
-        this.allmovies = apidata.results;
-        this.totalPages = apidata.total_results;
-      }
-
-     });
-  }
+  changePage(pageData:PageEvent){
+    this.currentPage=pageData.pageIndex+1;
+    this.pageSize=pageData.pageSize;
+    this.myMovie.getAllMovies(this.currentPage,this.pageSize).subscribe({next:(movieData)=>{
+      console.log(movieData);
+      this.allmovies=movieData;
+      this.totalItems=movieData.length;
+      
+    }})
+}
 }
 

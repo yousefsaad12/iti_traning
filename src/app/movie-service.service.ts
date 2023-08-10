@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MovieServiceService {
+  [x: string]: any;
 
   apiKey = '0eef1278ac4121ffed668457cfa1ad2e';
   moviesApi = 'https://api.themoviedb.org/3/movie/now_playing'
@@ -15,9 +16,10 @@ export class MovieServiceService {
 
   foundedElement={}
 
-  getAllMovies(pageNumber:number = 1):Observable<any>
+
+  getAllMovies(currentPage:number, pageSize:number):Observable<Imovie[]>
   {
-    return this.http.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this.apiKey}&page=${pageNumber}`);
+      return this.http.get<Imovie[]>(`http://localhost:3000/movies?page=${currentPage}&pagesize=${pageSize}`)
   }
   getMovieById(movieId:number):Observable<any>
   {
