@@ -7,6 +7,7 @@ import { SeriesPageComponent } from './series-page/series-page.component';
 import { MovieDetialsComponent } from './movie-detials/movie-detials.component';
 import { SeriesDetailsComponent } from './series-details/series-details.component';
 import { ProductsComponent } from './products/products.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = 
 [
@@ -16,6 +17,7 @@ const routes: Routes =
   {path: 'movie_details/:id', component:MovieDetialsComponent},
   {path: 'series-details/:id', component:SeriesDetailsComponent},
   {path: 'products', component:ProductsComponent},
+  {path: 'cart', component:CartComponent},
 ];
 
 @NgModule({

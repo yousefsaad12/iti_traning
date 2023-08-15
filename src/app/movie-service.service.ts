@@ -26,4 +26,15 @@ export class MovieServiceService {
     return this.http.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${this.apiKey}`);   
   }
 
+  addToCart(item:Imovie):Observable<any>
+  {
+    return this.http.post(`http://localhost:3000/addtocart`,{movieId:item.id})
+    
+  }
+  
+  getCart():Observable<any>
+  {
+    return this.http.get('http://localhost:3000/getCart')
+  }
+
 }

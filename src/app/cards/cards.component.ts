@@ -16,19 +16,20 @@ export class CardsComponent {
   allmovies:Imovie[] = [];
   totalItems:number = 0;
 
-  constructor(public myMovie: MovieServiceService){}
+  constructor(private myMovie: MovieServiceService){}
 
   ngOnInit():void
   {
     this.myMovie.getAllMovies(this.currentPage,this.pageSize).subscribe({next:(moviesData)=>{
-       console.log(moviesData);
+      
       this.allmovies = moviesData;
        
     }})
   }
 
 
-  changePage(pageData:PageEvent){
+  changePage(pageData:PageEvent)
+  {
     this.currentPage=pageData.pageIndex+1;
     this.pageSize=pageData.pageSize;
     this.myMovie.getAllMovies(this.currentPage,this.pageSize).subscribe({next:(movieData)=>{
@@ -37,6 +38,16 @@ export class CardsComponent {
       this.totalItems=movieData.length;
       
     }})
-}
+  }
+
+  addToCart(movie:Imovie)
+  {
+    this.myMovie.addToCart(movie).subscribe({
+      next:(data)=>{
+        console.log(data);
+      }
+    });
+  }
+
 }
 

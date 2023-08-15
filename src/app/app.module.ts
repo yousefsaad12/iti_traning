@@ -18,7 +18,8 @@ import { StarRatingComponent } from './star-rating/star-rating.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductsComponent } from './products/products.component'
+import { ProductsComponent } from './products/products.component';
+import { CartComponent } from './cart/cart.component'
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { ProductsComponent } from './products/products.component'
     SeriesDetailsComponent,
     StarRatingComponent,
     ProductsComponent,
+    CartComponent,
    
   ],
   imports: [
